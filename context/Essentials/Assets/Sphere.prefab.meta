@@ -1,0 +1,63 @@
+- !<AssetImportMetadata/757d7467-8664-4aa1-a27c-c2fcd9f5d2ee>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 271f8e3a-f6cb-487e-93de-b9c470990307
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 271f8e3a-f6cb-487e-93de-b9c470990307
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> d03981c2-313c-4baa-b0c3-26f0d1b2c517
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefab/2d8f45ab-76ab-4142-be57-5e342ddb148d>
+  PackagePath: ""
+  objects:
+    - !<own> 4724a68c-9388-4e81-ad2c-102102cd58c4
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/4724a68c-9388-4e81-ad2c-102102cd58c4>
+  PrefabRemaps:
+    []
+  Name: Sphere
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 10.000000, y: 10.000000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 65611fbf-b31e-49e3-a989-a580715df697
+- !<RenderMeshVisual/65611fbf-b31e-49e3-a989-a580715df697>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 4561d472-a24a-411d-9be3-7b1f057a0899
+  Mesh: !<reference> 53ee531f-c8b6-4fc5-b3d8-a6ac8215730a
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/d03981c2-313c-4baa-b0c3-26f0d1b2c517>
+  SourceRemaps:
+    - 15123ae3-924a-4d5c-8ce0-2bb97b7ea068: 65611fbf-b31e-49e3-a989-a580715df697
+    - 271f8e3a-f6cb-487e-93de-b9c470990307: 2d8f45ab-76ab-4142-be57-5e342ddb148d
+    - 8317c7df-92bd-4f7a-b839-4b2a85d33430: 4724a68c-9388-4e81-ad2c-102102cd58c4
+  SourceState: !<own> 2d8f45ab-76ab-4142-be57-5e342ddb148d

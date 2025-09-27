@@ -14,8 +14,13 @@ dock:
             type: section
             current: 0
         sizes:
+<<<<<<< HEAD
           - 510
           - 294
+=======
+          - 581
+          - 335
+>>>>>>> Spectacle-Sample/main
         type: splitter
         orientation: vertical
       - items:
@@ -30,8 +35,13 @@ dock:
             type: section
             current: 0
         sizes:
+<<<<<<< HEAD
           - 533
           - 271
+=======
+          - 607
+          - 309
+>>>>>>> Spectacle-Sample/main
         type: splitter
         orientation: vertical
       - items:
@@ -47,9 +57,16 @@ dock:
         type: section
         current: 0
     sizes:
+<<<<<<< HEAD
       - 282
       - 812
       - 91
       - 310
+=======
+      - 322
+      - 288
+      - 432
+      - 669
+>>>>>>> Spectacle-Sample/main
     type: splitter
     orientation: horizontal

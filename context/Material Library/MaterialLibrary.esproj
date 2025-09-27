@@ -1,0 +1,59 @@
+studioVersion:
+  major: 5
+  minor: 12
+  patch: 1
+  build: 25080420
+  type: Public
+coreVersion: 321
+clientVersion: 13.500000
+updateCheckpoint: 68
+sceneId: 1e4cae11-cf66-49fa-b479-1f6bf46388cc
+viewConfig:
+  simulation:
+    device: Spectacles (2024)
+    cameraFov: nan
+    fullFrameAspect: 0.666660
+    resolutionScale: 1.000000
+    viewport: Maximized
+    output: Live
+    stereoOutputEye: Center
+    deviceTypeOverride: Unknown
+    tint: true
+    screenshot: false
+    videoScreenRecord: false
+  cameraType: Front
+metaInfo:
+  hints:
+    []
+  tags:
+    []
+  lensName: Material Library
+  lensDescriptors:
+    - GEN_AI_ICON
+  lensApplicability:
+    - Front
+    - Back
+  lensClientCompatibilities:
+    - Mobile
+    - Web
+    - Spectacles
+  platformBundlesEnabled: false
+  iconHash: ""
+  videoPreviewHash: ""
+  fromTemplateName: Empty Project
+  fromTemplateUrl: Lens Studio Fiji 5.0.2.20231205
+  activationCamera: Front
+  sourceMapEnabled: false
+  usingMinClientVersions: false
+  androidMinClientVersion:
+    major: 0
+    minor: 0
+    patch: 0
+    build: 0
+  iOSMinClientVersion:
+    major: 0
+    minor: 0
+    patch: 0
+    build: 0
+  documentId: bae0de08-4905-4510-9189-f8b0413cb5ed
+  originalDocumentId: bae0de08-4905-4510-9189-f8b0413cb5ed

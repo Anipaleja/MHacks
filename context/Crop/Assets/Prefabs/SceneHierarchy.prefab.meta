@@ -1,0 +1,63 @@
+- !<AssetImportMetadata/c8b5c501-406e-41b6-b4f0-6e7950de8339>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 5933e938-cf8b-4a67-baa1-c18f6f10619a
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 5933e938-cf8b-4a67-baa1-c18f6f10619a
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 2c5872f5-6a16-4f69-8076-512e036d379c
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/2c5872f5-6a16-4f69-8076-512e036d379c>
+  SourceRemaps:
+    - 4c6d1f7f-eb21-4027-8780-f7fb222d7603: 3cffe457-c7fa-48ce-bff4-e0d20e81767a
+    - 5933e938-cf8b-4a67-baa1-c18f6f10619a: a3401ad7-c30e-4703-b057-11f4a77594d2
+    - 615661ca-f981-4509-a458-e61395a032bf: 61de744b-ac3c-4b56-b63e-79ef6145e9ca
+  SourceState: !<own> a3401ad7-c30e-4703-b057-11f4a77594d2
+- !<SceneObject/3cffe457-c7fa-48ce-bff4-e0d20e81767a>
+  PrefabRemaps:
+    []
+  Name: BUGFIX-ShowCamOnScreen
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 13.984762, z: -77.032166}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 15.000000, y: 10.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 61de744b-ac3c-4b56-b63e-79ef6145e9ca
+- !<RenderMeshVisual/61de744b-ac3c-4b56-b63e-79ef6145e9ca>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> c6f2111d-0921-47bc-a930-347655e7f32c
+  Mesh: !<reference> fa76f704-3d81-4438-83a1-7fd41e2c53f1
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefab/a3401ad7-c30e-4703-b057-11f4a77594d2>
+  PackagePath: ""
+  objects:
+    - !<own> 3cffe457-c7fa-48ce-bff4-e0d20e81767a
+  LazyLoading: false
+  RetainAssets: true

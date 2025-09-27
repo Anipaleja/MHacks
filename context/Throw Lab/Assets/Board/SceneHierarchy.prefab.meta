@@ -1,0 +1,63 @@
+- !<AssetImportMetadata/f8cb3dfb-b961-4b0a-87fb-87e6653ab069>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> bcaa52a8-3196-4f65-83eb-b80aae88500e
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> bcaa52a8-3196-4f65-83eb-b80aae88500e
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 30ba6a8b-04af-488f-bac4-b69eff164158
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefab/1ebe8725-f698-4623-83b6-a064c9f452f5>
+  PackagePath: ""
+  objects:
+    - !<own> dede65e5-e0e1-404f-aa08-9a67444e37a4
+  LazyLoading: false
+  RetainAssets: true
+- !<ObjectPrefabAssetData/30ba6a8b-04af-488f-bac4-b69eff164158>
+  SourceRemaps:
+    - 2a196fee-b24c-43c7-bd23-5762cae8f424: f8cdf7a0-3cbe-4345-b01f-a3f3aadbe790
+    - 7d03dc6a-faf1-4069-a8e6-8b1f9abf6dac: dede65e5-e0e1-404f-aa08-9a67444e37a4
+    - bcaa52a8-3196-4f65-83eb-b80aae88500e: 1ebe8725-f698-4623-83b6-a064c9f452f5
+  SourceState: !<own> 1ebe8725-f698-4623-83b6-a064c9f452f5
+- !<SceneObject/dede65e5-e0e1-404f-aa08-9a67444e37a4>
+  PrefabRemaps:
+    []
+  Name: board
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f8cdf7a0-3cbe-4345-b01f-a3f3aadbe790
+- !<RenderMeshVisual/f8cdf7a0-3cbe-4345-b01f-a3f3aadbe790>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 4b941e79-3d47-4e89-b2d7-0f510dee0c31
+  Mesh: !<reference> 70b134c1-4ba7-4191-9419-7d9af78173ee
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
