@@ -1,0 +1,13 @@
+- !<AssetCache>
+  AssetFiles:
+    36f8195a-56cd-46b3-bf68-8aa3fe534156: 7183e535-872a-d284-0f75-a34af2e4e4da/8ae09d947b75166645ece36d102fae5d/Data/yellow_alt.png
+  Assets:
+    - !<FileTexture/36f8195a-56cd-46b3-bf68-8aa3fe534156>
+      PackagePath: ""
+      FileInfo: !<FileTextureInfo>
+        Width: 250
+        Height: 250
+  SourceHash: 8ae09d947b75166645ece36d102fae5d
+  FileHash: 75116dfdd099be6fef862ba3d394fe4c
+  NativePackageItems:
+    []

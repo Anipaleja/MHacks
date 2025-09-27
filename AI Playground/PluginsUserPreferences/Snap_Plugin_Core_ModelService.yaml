@@ -1,0 +1,5 @@
+ExternalSources:
+  type: "std::map<Es::Uuid, Es::Path>"
+  value:
+    []
+  options: 4

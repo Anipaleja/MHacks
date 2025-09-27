@@ -1,0 +1,17 @@
+- !<AssetCache>
+  AssetFiles:
+    881b8440-dd4a-4ee1-a378-9151965cc7ab: 2f1bc79f-cdab-e822-41bf-90757630672e/8bec3bf8c5bbbe6bea67ff8e8ae4952b/Data/Main_sphere_default_normals.mesh
+  Assets:
+    - !<FileMesh/881b8440-dd4a-4ee1-a378-9151965cc7ab>
+      PackagePath: ""
+      Info: !<MeshInfo>
+        Triangles: 3120
+        Vertices: 1679
+        Blendshapes:
+          []
+        Joints: 0
+        AabbSize: {x: 2.000000, y: 2.000000, z: 2.000001}
+  SourceHash: 8bec3bf8c5bbbe6bea67ff8e8ae4952b
+  FileHash: 50c0047e58f5a897e787024f143783f6
+  NativePackageItems:
+    []

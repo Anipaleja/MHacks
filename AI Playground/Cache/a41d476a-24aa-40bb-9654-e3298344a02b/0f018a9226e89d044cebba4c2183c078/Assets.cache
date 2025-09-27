@@ -1,0 +1,13 @@
+- !<AssetCache>
+  AssetFiles:
+    4ed9476d-236a-4b2f-9e35-257533847fed: a41d476a-24aa-40bb-9654-e3298344a02b/0f018a9226e89d044cebba4c2183c078/Data/Noise_combine_512.png
+  Assets:
+    - !<FileTexture/4ed9476d-236a-4b2f-9e35-257533847fed>
+      PackagePath: ""
+      FileInfo: !<FileTextureInfo>
+        Width: 512
+        Height: 512
+  SourceHash: 0f018a9226e89d044cebba4c2183c078
+  FileHash: 86d7980cdd1fd83ff59131fee535e716
+  NativePackageItems:
+    []

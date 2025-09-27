@@ -1,0 +1,13 @@
+- !<AssetCache>
+  AssetFiles:
+    cabc9f50-b11e-4eb7-b489-b5872b2c1646: 4c7477f3-1c81-d438-48ec-ae4e71688684/6d376e0a23870e15544a4b8588b6493a/Data/yellow_halfcolor.png
+  Assets:
+    - !<FileTexture/cabc9f50-b11e-4eb7-b489-b5872b2c1646>
+      PackagePath: ""
+      FileInfo: !<FileTextureInfo>
+        Width: 250
+        Height: 250
+  SourceHash: 6d376e0a23870e15544a4b8588b6493a
+  FileHash: fe45f9b90cdd5463b67b30897e32ee19
+  NativePackageItems:
+    []

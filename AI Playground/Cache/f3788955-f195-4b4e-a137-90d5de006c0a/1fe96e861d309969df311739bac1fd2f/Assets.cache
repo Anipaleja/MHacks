@@ -1,0 +1,13 @@
+- !<AssetCache>
+  AssetFiles:
+    ce260221-adc8-4fac-abed-74c22d8f9beb: f3788955-f195-4b4e-a137-90d5de006c0a/1fe96e861d309969df311739bac1fd2f/Data/Microphone.png
+  Assets:
+    - !<FileTexture/ce260221-adc8-4fac-abed-74c22d8f9beb>
+      PackagePath: ""
+      FileInfo: !<FileTextureInfo>
+        Width: 512
+        Height: 512
+  SourceHash: 1fe96e861d309969df311739bac1fd2f
+  FileHash: 652dffae5b7d360a99ca879098ae7d62
+  NativePackageItems:
+    []

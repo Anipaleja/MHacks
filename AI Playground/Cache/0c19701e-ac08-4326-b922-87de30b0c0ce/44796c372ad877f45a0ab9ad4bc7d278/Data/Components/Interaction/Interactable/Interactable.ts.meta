@@ -1,0 +1,75 @@
+- !<AssetImportMetadata/b4f5f936-5d22-4d9e-a415-a82f2554f021>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 4dbaada5-89aa-44bf-9ce8-f707888c5484
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/4dbaada5-89aa-44bf-9ce8-f707888c5484>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: f5ccc8e2-4e8d-4daa-b65b-e5a48b6e0ee8
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    acceptableSyncInteractionTypes: false
+    acceptableXDirections: false
+    acceptableYDirections: false
+    acceptableZDirections: false
+    allowMultipleInteractors: false
+    enableInstantDrag: false
+    enablePokeDirectionality: false
+    isScrollable: true
+    isSynced: false
+    targetingMode: false
+    useFilteredPinch: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - targetingMode: !<float> 3.000000
+      enableInstantDrag: false
+      isScrollable: false
+      allowMultipleInteractors: true
+      enablePokeDirectionality: false
+      acceptableXDirections: !<float> 0.000000
+      acceptableYDirections: !<float> 0.000000
+      acceptableZDirections: !<float> 1.000000
+      useFilteredPinch: false
+      isSynced: false
+      acceptableSyncInteractionTypes: !<float> 7.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input float targetingMode = 3 {"hint":"Defines how Interactors can target and interact with this Interactable. Options include:\n- Direct: Only allows close pinch interactions where a hand directly touches the Interactable.\n- Indirect: Allows interactions from a distance with raycasting.\n- Direct/Indirect: Supports both direct and indirect interaction methods.\n- Poke: Enables finger poking interactions.\n- All: Supports all targeting modes (Direct, Indirect, and Poke).", "widget":"combobox", "values":[{"label":"Direct", "value":1}, {"label":"Indirect", "value":2}, {"label":"Direct/Indirect", "value":3}, {"label":"Poke", "value":4}, {"label":"All", "value":7}]}'
+    - "// @input bool enableInstantDrag {\"hint\":\"Enable this to allow the Interactable to instantly be dragged on trigger rather than obeying the Interactor's drag threshold.\"}"
+    - '// @input bool isScrollable {"hint":"A flag that enables scroll interactions when this element is interacted with. When true, interactions with this element can scroll a parent ScrollView that has content extending beyond its visible bounds."}'
+    - '// @input bool allowMultipleInteractors = true {"hint":"Determines whether this Interactable can be simultaneously controlled by multiple Interactors. When false, only one Interactor type (e.g., left hand or right hand) can interact with this Interactable at a time, and subsequent interaction attempts from different Interactors will be blocked. Set to true to enable interactions from multiple sources simultaneously, such as allowing both hands to manipulate the Interactable at once."}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input bool enablePokeDirectionality {"hint":"Enable Poke Directionality to help prevent accidental interactions when users approach from unwanted angles."}'
+    - '// @input float acceptableXDirections {"label":"X", "hint":"Controls from which directions a poke interaction can trigger this Interactable along the X-axis:\n- Left: Finger must approach from -X direction.\n- Right: Finger must approach from +X direction.\n- All: Accepts both directions.\n- None: Disables X-axis poke detection.", "widget":"combobox", "values":[{"label":"None", "value":0}, {"label":"Right", "value":1}, {"label":"Left", "value":2}, {"label":"All", "value":3}], "showIf":"enablePokeDirectionality"}'
+    - '// @input float acceptableYDirections {"label":"Y", "hint":"Controls from which directions a poke interaction can trigger this Interactable along the Y-axis:\n- Top: Finger must approach from +Y direction.\n- Bottom: Finger must approach from -Y direction.\n- All: Accepts both directions.\n- None: Disables Y-axis poke detection.", "widget":"combobox", "values":[{"label":"None", "value":0}, {"label":"Top", "value":1}, {"label":"Bottom", "value":2}, {"label":"All", "value":3}], "showIf":"enablePokeDirectionality"}'
+    - '// @input float acceptableZDirections = 1 {"label":"Z", "hint":"Controls from which directions a poke interaction can trigger this Interactable along the Z-axis:\n- Front: Finger must approach from +Z direction.\n- Back: Finger must approach from -Z direction.\n- All: Accepts both directions.\n- None: Disables Z-axis poke detection.", "widget":"combobox", "values":[{"label":"None", "value":0}, {"label":"Front", "value":1}, {"label":"Back", "value":2}, {"label":"All", "value":3}], "showIf":"enablePokeDirectionality"}'
+    - '// @input bool useFilteredPinch {"hint":"Determines if the Interactable should listen to filtered pinch events when targeted by a HandInteractor. Filtered pinch events are more stable when the hand is quickly moving but may add latency in non-moving cases. Most interactions should use raw pinch events by default. Spatial interactions with large hand movement (such as dragging, scrolling) should use filtered pinch events. If an Interactable has a parent Interactable that uses filtered pinch events, the Interactable will also use filtered pinch events."}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Sync Kit Support"}'
+    - "// @input bool isSynced {\"hint\":\"Relevant only to lenses that use SpectaclesSyncKit when it has SyncInteractionManager in its prefab.   If set to true on the same frame as creating the Interactable component, events targeting this Interactable   will be propagated to other users in the same Connected Lenses session using SyncKit's SyncInteractionManager.\"}"
+    - "// @input float acceptableSyncInteractionTypes = 7 {\"hint\":\"Relevant only to lenses that use SpectaclesSyncKit when it has SyncInteractionManager in its prefab. If set to SyncInteractionType.All, any user connected to the session can interact with this Interactable. If set to SyncInteraction.Host, only the session host can interact with this Interactable. If set to SyncInteraction.Local, only the local user can interact with this Interactable. Make sure to programmatically define the local user by setting Interactable.localConnectionId to the user's connection ID. If set to SyncInteraction.HostAndLocal, both the host and local user can interact with this Interactable. The Interactable's localConnectionId must be programmatically set by the developer.\", \"widget\":\"combobox\", \"values\":[{\"label\":\"All\", \"value\":7}, {\"label\":\"Host\", \"value\":1}, {\"label\":\"Local\", \"value\":2}, {\"label\":\"Host and Local\", \"value\":3}], \"showIf\":\"isSynced\", \"showIfValue\":true}"
+    - '// @ui {"widget":"group_end"}'

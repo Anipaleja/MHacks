@@ -1,0 +1,127 @@
+{ 
+	"ui": 
+	[
+		{
+        	"label": "Graph Parameters",
+        	"widget": "group_start"
+        },
+{ 
+                	"bindingName": "Tweak_N66", 
+                	"label":       "Idle", 
+                	"widget":      "texture_group",
+                	"sortIndex":   "0",
+                	"hint":        ""
+                },
+                
+                { 
+                	"bindingName": "Tweak_N67", 
+                	"label":       "TalkingThinking", 
+                	"widget":      "texture_group",
+                	"sortIndex":   "0",
+                	"hint":        ""
+                },
+                
+                { 
+                	"bindingName": "Tweak_N55", 
+                	"label":       "Listening", 
+                	"widget":      "texture_group",
+                	"sortIndex":   "0",
+                	"hint":        ""
+                },
+                
+                {
+                	"bindingName": "Tweak_N57",
+                	"label":       "Opaque",
+                	"widget":      "slider",
+                	"min":         0,
+                	"max":         1,
+                	"step":        "0.01",
+                	"sortIndex":   "0",
+                	"hint":        "",
+                	"default":     "0.5"
+                },
+                
+                {
+                	"bindingName": "opacity",
+                	"label":       "Opacity",
+                	"widget":      "slider",
+                	"min":         0,
+                	"max":         1,
+                	"step":        "0.01",
+                	"sortIndex":   "0",
+                	"hint":        "",
+                	"default":     "1.0"
+                },
+                
+                {
+                	"label": "Controlled by Script",
+                	"widget": "group_start"
+                },                    
+                    {
+                    	"bindingName": "colorSwitchTransition",
+                    	"label":       "Color Transition",
+                    	"widget":      "slider",
+                    	"min":         0,
+                    	"max":         1,
+                    	"step":        "0.01",
+                    	"sortIndex":   "0",
+                    	"hint":        "",
+                    	"default":     "1.0"
+                    },
+                    
+                    {
+                    	"bindingName": "colorSwitchFrom",
+                    	"label":       "Switch From",
+                    	"widget":      "spinbox",
+                    	"step":        1,
+                    	"sortIndex":   "1",
+                    	"hint":        ""
+                    },
+                    
+                    {
+                    	"bindingName": "colorSwitchTo",
+                    	"label":       "Switch To",
+                    	"widget":      "spinbox",
+                    	"step":        1,
+                    	"sortIndex":   "2",
+                    	"hint":        ""
+                    },
+                    
+                    {
+                    	"bindingName": "idleTalkThinking",
+                    	"label":       "Idle_Talk_Thinking",
+                    	"widget":      "slider",
+                    	"min":         0,
+                    	"max":         1,
+                    	"step":        1,
+                    	"sortIndex":   "3",
+                    	"hint":        ""
+                    },
+                {
+                	"widget": "group_end"
+                },
+
+        {
+        	"widget": "group_end"
+        },
+        
+		
+	{
+		"bindingName": "alphaTestThreshold",
+		"widget": "slider",
+		"min" : 0.0,
+		"max" : 1.0,
+		"step": 0.001,
+		"default": 0.5,
+		"hint": "When the 'Alpha Test' blend mode is enabled, pixels with alpha values lower than this disappear."
+	}
+	
+	],
+	
+	"shaderType": "Mesh3d",
+	
+	"extraDefines":
+	[
+		
+	]
+}

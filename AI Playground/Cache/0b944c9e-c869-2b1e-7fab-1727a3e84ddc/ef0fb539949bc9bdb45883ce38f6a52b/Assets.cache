@@ -1,0 +1,13 @@
+- !<AssetCache>
+  AssetFiles:
+    4b8343cd-812d-477b-929b-127ab1d5183b: 0b944c9e-c869-2b1e-7fab-1727a3e84ddc/ef0fb539949bc9bdb45883ce38f6a52b/Data/purple_halfcolor.png
+  Assets:
+    - !<FileTexture/4b8343cd-812d-477b-929b-127ab1d5183b>
+      PackagePath: ""
+      FileInfo: !<FileTextureInfo>
+        Width: 250
+        Height: 250
+  SourceHash: ef0fb539949bc9bdb45883ce38f6a52b
+  FileHash: 024491f893559db34788b1f3d5fa12c3
+  NativePackageItems:
+    []

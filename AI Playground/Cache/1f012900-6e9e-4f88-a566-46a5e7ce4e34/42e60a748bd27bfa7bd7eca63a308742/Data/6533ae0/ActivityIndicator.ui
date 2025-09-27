@@ -1,0 +1,91 @@
+{ 
+	"ui": 
+	[
+		{
+        	"label": "Graph Parameters",
+        	"widget": "group_start"
+        },
+{
+                	"bindingName": "in_out",
+                	"label":       "In_Out",
+                	"widget":      "slider",
+                	"min":         0,
+                	"max":         2,
+                	"step":        "0.01",
+                	"sortIndex":   "0",
+                	"hint":        "",
+                	"default":     "1.0"
+                },
+                
+                {
+                	"bindingName": "Tweak_N38",
+                	"label":       "Time ",
+                	"widget":      "slider",
+                	"min":         0,
+                	"max":         2,
+                	"step":        "0.001",
+                	"sortIndex":   "0",
+                	"hint":        "",
+                	"default":     "1.0"
+                },
+                
+                {
+                	"bindingName": "Tweak_N23",
+                	"label":       "NoiseFront",
+                	"widget":      "slider",
+                	"min":         0,
+                	"max":         10,
+                	"step":        "0.01",
+                	"sortIndex":   "0",
+                	"hint":        "",
+                	"default":     "2.0"
+                },
+                
+                {
+                	"bindingName": "Tweak_N33",
+                	"label":       "NoiseBack",
+                	"widget":      "slider",
+                	"min":         0,
+                	"max":         10,
+                	"step":        "0.01",
+                	"sortIndex":   "0",
+                	"hint":        "",
+                	"default":     "8.0"
+                },
+                
+                {
+                	"bindingName": "Tweak_N37",
+                	"label":       "Noise Big",
+                	"widget":      "slider",
+                	"min":         0,
+                	"max":         0.5,
+                	"step":        "0.01",
+                	"sortIndex":   "0",
+                	"hint":        "",
+                	"default":     "0.2"
+                },
+
+        {
+        	"widget": "group_end"
+        },
+        
+		
+	{
+		"bindingName": "alphaTestThreshold",
+		"widget": "slider",
+		"min" : 0.0,
+		"max" : 1.0,
+		"step": 0.001,
+		"default": 0.5,
+		"hint": "When the 'Alpha Test' blend mode is enabled, pixels with alpha values lower than this disappear."
+	}
+	
+	],
+	
+	"shaderType": "Mesh3d",
+	
+	"extraDefines":
+	[
+		
+	]
+}
