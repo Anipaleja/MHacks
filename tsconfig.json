@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx", // or "react" for older setups
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "module": "commonjs",
+    "target": "es2019",
+    "isolatedModules": true,
+    "noEmit": true,
+    "skipDefaultLibCheck": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "lib": ["dom", "dom.iterable", "esnext", "es2019"],
+    "types": [],
+    "paths": {
+      "*": [
+        "./Packages/*",
+        "./Cache/TypeScript/Src/Assets/*",
+        "./Cache/TypeScript/Src/Packages/*"
+      ]
+    }
+  },
+  "include": ["./**/*.ts", "./**/*.tsx"],
+  "exclude": ["node_modules"]
+}
