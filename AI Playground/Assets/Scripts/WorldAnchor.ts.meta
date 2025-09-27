@@ -1,0 +1,50 @@
+- !<AssetImportMetadata/c8d259dd-77ac-48b0-99c2-efcae0bb66c4>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> fdefc9d8-2217-428e-bb8b-4de7bfe5793e
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> fdefc9d8-2217-428e-bb8b-4de7bfe5793e
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 2718605b-dd9e-47e7-800c-a2940e00ee10
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/2718605b-dd9e-47e7-800c-a2940e00ee10>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 086ccc2d-5bd4-4158-98ff-ea276c4c94d3
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    anchorDistance: false
+    autoAnchorOnAwake: false
+    useCurrentPosition: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - anchorDistance: !<float> 80.000000
+      autoAnchorOnAwake: true
+      useCurrentPosition: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input float anchorDistance = 80
+    - '// @ui {"widget":"label", "label":"Anchor Distance (cm)"}'
+    - // @input bool autoAnchorOnAwake = true
+    - '// @ui {"widget":"label", "label":"Auto Anchor on Awake"}'
+    - // @input bool useCurrentPosition
+    - '// @ui {"widget":"label", "label":"Use Current Position as Anchor"}'
