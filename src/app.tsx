@@ -68,7 +68,9 @@ export default function App() {
             </li>
           ))}
         </ul>
+      </div>
 
+      <div className="sidebar">
         <h4>Suggested Tasks</h4>
         <ul className="list">
           {suggestedTasks.map((task) => (
