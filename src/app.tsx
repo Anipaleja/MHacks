@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./app.css";
+
+let nextTaskId = 1;
 
 type Task = { id: number; text: string };
 type Note = { id: number; text: string };
 
-const tasks: Task[] = [
-  { id: 1, text: "Task 1" },
-  { id: 2, text: "Task 2" },
-  { id: 3, text: "Task 3" },
-  { id: 4, text: "Task 4" },
-];
+const initialTasks: Task[] = [];
 
 const suggestedTasks: Task[] = [
   { id: 5, text: "Task 1" },
@@ -22,11 +19,31 @@ const notes: Note[] = [
 ];
 
 export default function App() {
+  // 1. Use useState to manage the list of tasks
+  const [tasks, setTasks] = useState(initialTasks);
+
+  // 2. Function to add a new task
+  const handleAddTask = () => {
+    // Create a new task object
+    const newTask: Task = {
+      id: nextTaskId++, // Use and then increment the ID
+      text: `New Task ${nextTaskId - 1}`, // Example text
+    };
+
+    // Update the state with the new task appended
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+  };
+
   return (
     <div className="container">
       {/* Left - Tasks */}
       <div className="sidebar">
-        <h3>📋 Tasks ➕</h3>
+        <div className="header-row">
+          <button onClick={handleAddTask} className="add-button">
+            ➕ Add Task
+          </button>
+          <h3>📋 Tasks ➕</h3>
+        </div>
         <ul className="list">
           {tasks.map((task) => (
             <li key={task.id} className="list-item">
