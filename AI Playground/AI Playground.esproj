@@ -38,8 +38,13 @@ metaInfo:
   platformBundlesEnabled: false
   iconHash: ""
   videoPreviewHash: ""
+<<<<<<< HEAD
   fromTemplateName: AI Playground
   fromTemplateUrl: Lens Studio 5.12.1.25080420
+=======
+  fromTemplateName: Spectacles
+  fromTemplateUrl: Lens Studio 5.10.0.25052803
+>>>>>>> Spectacle-Sample/main
   activationCamera: Front
   sourceMapEnabled: false
   usingMinClientVersions: false
