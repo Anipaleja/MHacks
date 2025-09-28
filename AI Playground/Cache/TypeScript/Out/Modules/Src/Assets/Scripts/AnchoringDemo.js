@@ -11,7 +11,7 @@ var __selfType = requireType("./AnchoringDemo");
 function component(target) { target.getTypeName = function () { return __selfType; }; }
 const PositionAnchor_1 = require("./PositionAnchor");
 /**
- * Demo script showing how to use the world anchoring system
+ * Demo script showing world anchoring with distance-based visibility
  */
 let AnchoringDemo = class AnchoringDemo extends BaseScriptComponent {
     onAwake() {
@@ -37,7 +37,26 @@ let AnchoringDemo = class AnchoringDemo extends BaseScriptComponent {
             });
         }
         print("Anchoring Demo initialized! Tap to create anchored objects.");
-        print("Objects will stay in place even when you move to different rooms.");
+        print("Objects will stay in place and fade based on distance.");
+        // Set up distance feedback if enabled
+        if (this.showDistanceFeedback) {
+            this.setupDistanceFeedback();
+        }
+    }
+    setupDistanceFeedback() {
+        let lastFeedbackTime = 0;
+        this.createEvent("UpdateEvent").bind(() => {
+            const currentTime = getTime();
+            if (currentTime - lastFeedbackTime > 2.0) { // Every 2 seconds
+                if (this.distanceManager) {
+                    const stats = this.distanceManager.getVisibilityStats();
+                    if (stats.total > 0) {
+                        print(`Visibility: ${stats.visible}/${stats.total} objects in range`);
+                    }
+                }
+                lastFeedbackTime = currentTime;
+            }
+        });
     }
     createNextObject() {
         if (!this.enhancedFactory || this.promptList.length === 0) {
@@ -50,6 +69,10 @@ let AnchoringDemo = class AnchoringDemo extends BaseScriptComponent {
         this.enhancedFactory.generateAnchoredObject(prompt)
             .then((result) => {
             print(result);
+            // Rescan for new anchors if distance manager is available
+            if (this.distanceManager) {
+                this.distanceManager.rescanAnchors();
+            }
         })
             .catch((error) => {
             print("Error creating object: " + error);

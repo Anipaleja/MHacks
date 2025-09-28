@@ -24,6 +24,12 @@ function checkUndefined(property, showIfData){
 // @ui {"widget":"label", "label":"Enable World Anchoring"}
 // @input float placementDistance = 80
 // @ui {"widget":"label", "label":"Placement Distance (cm)"}
+// @input float maxVisibleDistance = 500
+// @ui {"widget":"label", "label":"Max Visible Distance (cm)"}
+// @input float fadeStartDistance = 300
+// @ui {"widget":"label", "label":"Fade Start Distance (cm)"}
+// @input bool enableDistanceFading = true
+// @ui {"widget":"label", "label":"Enable Distance Fading"}
 // @ui {"widget":"group_end"}
 // @input bool runOnTap
 // @input Asset.ObjectPrefab snap3DInteractablePrefab
@@ -47,6 +53,9 @@ awakeEvent.bind(() => {
     checkUndefined("useVertexColor", []);
     checkUndefined("enableAnchoring", []);
     checkUndefined("placementDistance", []);
+    checkUndefined("maxVisibleDistance", []);
+    checkUndefined("fadeStartDistance", []);
+    checkUndefined("enableDistanceFading", []);
     checkUndefined("runOnTap", []);
     checkUndefined("snap3DInteractablePrefab", []);
     if (script.onAwake) {

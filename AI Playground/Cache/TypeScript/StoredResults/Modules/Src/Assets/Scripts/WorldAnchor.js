@@ -11,8 +11,7 @@ var __selfType = requireType("./WorldAnchor");
 function component(target) { target.getTypeName = function () { return __selfType; }; }
 const WorldCameraFinderProvider_1 = require("SpectaclesInteractionKit.lspkg/Providers/CameraProvider/WorldCameraFinderProvider");
 /**
- * Component that anchors objects to specific world positions, making them stay in place
- * even when the user moves to different rooms or locations.
+ * Component that anchors objects to specific world positions with distance-based visibility
  */
 let WorldAnchor = class WorldAnchor extends BaseScriptComponent {
     onAwake() {
@@ -109,6 +108,7 @@ let WorldAnchor = class WorldAnchor extends BaseScriptComponent {
         this.isAnchored = false;
         this.anchorPosition = null;
         this.anchorRotation = null;
+        this.originalOpacity = 1.0;
     }
 };
 exports.WorldAnchor = WorldAnchor;

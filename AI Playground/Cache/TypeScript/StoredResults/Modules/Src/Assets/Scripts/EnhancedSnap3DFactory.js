@@ -42,6 +42,10 @@ let EnhancedSnap3DFactory = class EnhancedSnap3DFactory extends BaseScriptCompon
             if (this.enableAnchoring) {
                 let positionAnchor = outputObj.createComponent(PositionAnchor_1.PositionAnchor.getTypeName());
                 positionAnchor.anchorOnStart = false; // We'll position it manually
+                // Configure distance parameters
+                positionAnchor.maxVisibleDistance = this.maxVisibleDistance;
+                positionAnchor.fadeStartDistance = this.fadeStartDistance;
+                positionAnchor.enableDistanceFading = this.enableDistanceFading;
                 if (overridePosition) {
                     positionAnchor.anchorToWorldPosition(overridePosition);
                 }

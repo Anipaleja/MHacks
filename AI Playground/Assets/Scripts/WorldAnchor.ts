@@ -1,8 +1,7 @@
 import WorldCameraFinderProvider from "SpectaclesInteractionKit.lspkg/Providers/CameraProvider/WorldCameraFinderProvider";
 
 /**
- * Component that anchors objects to specific world positions, making them stay in place
- * even when the user moves to different rooms or locations.
+ * Component that anchors objects to specific world positions with distance-based visibility
  */
 @component
 export class WorldAnchor extends BaseScriptComponent {
@@ -18,10 +17,19 @@ export class WorldAnchor extends BaseScriptComponent {
     @ui.label("Use Current Position as Anchor")
     useCurrentPosition: boolean = false;
     
+    @input
+    @ui.label("Max Visible Distance (cm)")
+    maxVisibleDistance: number = 500;
+    
+    @input
+    @ui.label("Enable Distance Fading")
+    enableDistanceFading: boolean = true;
+    
     private wcfmp = WorldCameraFinderProvider.getInstance();
     private isAnchored: boolean = false;
     private anchorPosition: vec3 = null;
     private anchorRotation: quat = null;
+    private originalOpacity: number = 1.0;
     
     onAwake() {
         if (this.autoAnchorOnAwake) {

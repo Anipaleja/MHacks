@@ -11,10 +11,12 @@ var __selfType = requireType("./PositionAnchor");
 function component(target) { target.getTypeName = function () { return __selfType; }; }
 const WorldCameraFinderProvider_1 = require("SpectaclesInteractionKit.lspkg/Providers/CameraProvider/WorldCameraFinderProvider");
 /**
- * Simple world position tracker that keeps objects in fixed world locations
+ * World position tracker with distance-based visibility
  */
 let PositionAnchor = class PositionAnchor extends BaseScriptComponent {
     onAwake() {
+        // Cache all render mesh visuals for distance-based visibility
+        this.cacheRenderMeshVisuals();
         if (this.anchorOnStart) {
             // Use event to delay initialization
             this.createEvent("UpdateEvent").bind(() => {
@@ -22,6 +24,27 @@ let PositionAnchor = class PositionAnchor extends BaseScriptComponent {
                     this.setAnchorPosition();
                 }
             });
+        }
+    }
+    /**
+     * Cache all RenderMeshVisual components for visibility control
+     */
+    cacheRenderMeshVisuals() {
+        this.renderMeshVisuals = [];
+        this.findRenderMeshVisuals(this.sceneObject);
+    }
+    /**
+     * Recursively find all RenderMeshVisual components
+     */
+    findRenderMeshVisuals(obj) {
+        // Check current object
+        const renderMesh = obj.getComponent("RenderMeshVisual");
+        if (renderMesh) {
+            this.renderMeshVisuals.push(renderMesh);
+        }
+        // Check children
+        for (let i = 0; i < obj.getChildrenCount(); i++) {
+            this.findRenderMeshVisuals(obj.getChild(i));
         }
     }
     /**
@@ -75,7 +98,7 @@ let PositionAnchor = class PositionAnchor extends BaseScriptComponent {
         }
     }
     /**
-     * Check if object has moved from anchor and correct if needed
+     * Check if object has moved from anchor and update visibility based on distance
      */
     update() {
         if (this.isAnchored && this.worldPosition) {
@@ -84,6 +107,58 @@ let PositionAnchor = class PositionAnchor extends BaseScriptComponent {
             // If object has moved more than 1cm from anchor, snap it back
             if (distance > 1.0) {
                 this.enforceAnchor();
+            }
+            // Update visibility based on distance to camera
+            this.updateVisibilityBasedOnDistance();
+        }
+    }
+    /**
+     * Update object visibility based on distance to camera
+     */
+    updateVisibilityBasedOnDistance() {
+        if (!this.enableDistanceFading || !this.worldPosition) {
+            return;
+        }
+        // Get camera position
+        const cameraPos = this.wcfmp.getForwardPosition(0);
+        const distanceToCamera = this.worldPosition.distance(cameraPos);
+        // Debug distance if enabled
+        if (this.showDistanceDebug) {
+            print(`Distance to ${this.sceneObject.name}: ${distanceToCamera.toFixed(1)}cm`);
+        }
+        // Determine visibility and opacity
+        let targetOpacity = 1.0;
+        let shouldBeVisible = true;
+        if (distanceToCamera > this.maxVisibleDistance) {
+            // Too far - completely invisible
+            shouldBeVisible = false;
+            targetOpacity = 0.0;
+        }
+        else if (distanceToCamera > this.fadeStartDistance) {
+            // In fade range - calculate opacity
+            const fadeRange = this.maxVisibleDistance - this.fadeStartDistance;
+            const fadeProgress = (distanceToCamera - this.fadeStartDistance) / fadeRange;
+            targetOpacity = 1.0 - fadeProgress;
+            shouldBeVisible = targetOpacity > 0.1; // Keep visible if opacity > 10%
+        }
+        // Apply visibility changes
+        this.setObjectVisibility(shouldBeVisible, targetOpacity);
+    }
+    /**
+     * Set the visibility and opacity of the object
+     */
+    setObjectVisibility(visible, opacity) {
+        // Update SceneObject enabled state
+        if (this.sceneObject.enabled !== visible) {
+            this.sceneObject.enabled = visible;
+        }
+        // Update opacity of render mesh visuals
+        for (let renderMesh of this.renderMeshVisuals) {
+            if (renderMesh && renderMesh.getMaterial(0)) {
+                const material = renderMesh.getMaterial(0);
+                if (material.mainPass) {
+                    material.mainPass.baseColor = new vec4(material.mainPass.baseColor.r, material.mainPass.baseColor.g, material.mainPass.baseColor.b, opacity);
+                }
             }
         }
     }
@@ -99,12 +174,45 @@ let PositionAnchor = class PositionAnchor extends BaseScriptComponent {
     getAnchorPosition() {
         return this.worldPosition;
     }
+    /**
+     * Get current distance to camera
+     */
+    getDistanceToCamera() {
+        if (!this.worldPosition)
+            return -1;
+        const cameraPos = this.wcfmp.getForwardPosition(0);
+        return this.worldPosition.distance(cameraPos);
+    }
+    /**
+     * Check if object is currently visible based on distance
+     */
+    isVisibleByDistance() {
+        if (!this.enableDistanceFading)
+            return true;
+        const distance = this.getDistanceToCamera();
+        return distance <= this.maxVisibleDistance;
+    }
+    /**
+     * Set distance parameters
+     */
+    setDistanceParameters(maxVisible, fadeStart) {
+        this.maxVisibleDistance = maxVisible;
+        this.fadeStartDistance = fadeStart;
+    }
+    /**
+     * Force refresh visibility based on current distance
+     */
+    refreshVisibility() {
+        this.updateVisibilityBasedOnDistance();
+    }
     __initialize() {
         super.__initialize();
         this.worldPosition = null;
         this.worldRotation = null;
         this.isAnchored = false;
         this.wcfmp = WorldCameraFinderProvider_1.default.getInstance();
+        this.originallyVisible = true;
+        this.renderMeshVisuals = [];
     }
 };
 exports.PositionAnchor = PositionAnchor;

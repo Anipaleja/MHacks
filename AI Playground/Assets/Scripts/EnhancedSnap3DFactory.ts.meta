@@ -22,21 +22,58 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: 94646fa6-c2dc-449d-962c-99efc5037cb7
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    {}
+    enableAnchoring: false
+    enableDistanceFading: false
+    fadeStartDistance: false
+    maxVisibleDistance: false
+    placementDistance: false
+    prompt: false
+    refineMesh: false
+    runOnTap: false
+    snap3DInteractablePrefab: false
+    useVertexColor: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
-    -
-      {}
+    - prompt: A cute dog wearing a hat
+      refineMesh: true
+      useVertexColor: false
+      enableAnchoring: true
+      placementDistance: !<float> 80.000000
+      maxVisibleDistance: !<float> 500.000000
+      fadeStartDistance: !<float> 300.000000
+      enableDistanceFading: true
+      runOnTap: false
+      snap3DInteractablePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    []
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Submit and Get Status Example"}'
+    - '// @input string prompt = "A cute dog wearing a hat" {"widget":"text_area"}'
+    - // @input bool refineMesh = true
+    - // @input bool useVertexColor
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"World Anchoring"}'
+    - // @input bool enableAnchoring = true
+    - '// @ui {"widget":"label", "label":"Enable World Anchoring"}'
+    - // @input float placementDistance = 80
+    - '// @ui {"widget":"label", "label":"Placement Distance (cm)"}'
+    - // @input float maxVisibleDistance = 500
+    - '// @ui {"widget":"label", "label":"Max Visible Distance (cm)"}'
+    - // @input float fadeStartDistance = 300
+    - '// @ui {"widget":"label", "label":"Fade Start Distance (cm)"}'
+    - // @input bool enableDistanceFading = true
+    - '// @ui {"widget":"label", "label":"Enable Distance Fading"}'
+    - '// @ui {"widget":"group_end"}'
+    - // @input bool runOnTap
+    - // @input Asset.ObjectPrefab snap3DInteractablePrefab

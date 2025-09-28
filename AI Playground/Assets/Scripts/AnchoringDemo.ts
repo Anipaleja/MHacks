@@ -1,8 +1,9 @@
 import { EnhancedSnap3DFactory } from "./EnhancedSnap3DFactory";
 import { PositionAnchor } from "./PositionAnchor";
+import { DistanceManager } from "./DistanceManager";
 
 /**
- * Demo script showing how to use the world anchoring system
+ * Demo script showing world anchoring with distance-based visibility
  */
 @component
 export class AnchoringDemo extends BaseScriptComponent {
@@ -20,7 +21,14 @@ export class AnchoringDemo extends BaseScriptComponent {
     private autoGenerate: boolean = false;
     
     @input
+    @ui.label("Show Distance Feedback")
+    private showDistanceFeedback: boolean = true;
+    
+    @input
     enhancedFactory: EnhancedSnap3DFactory;
+    
+    @input
+    distanceManager: DistanceManager;
     
     private promptList: string[] = [];
     private currentIndex: number = 0;
@@ -51,7 +59,29 @@ export class AnchoringDemo extends BaseScriptComponent {
         }
         
         print("Anchoring Demo initialized! Tap to create anchored objects.");
-        print("Objects will stay in place even when you move to different rooms.");
+        print("Objects will stay in place and fade based on distance.");
+        
+        // Set up distance feedback if enabled
+        if (this.showDistanceFeedback) {
+            this.setupDistanceFeedback();
+        }
+    }
+    
+    private setupDistanceFeedback(): void {
+        let lastFeedbackTime = 0;
+        
+        this.createEvent("UpdateEvent").bind(() => {
+            const currentTime = getTime();
+            if (currentTime - lastFeedbackTime > 2.0) { // Every 2 seconds
+                if (this.distanceManager) {
+                    const stats = this.distanceManager.getVisibilityStats();
+                    if (stats.total > 0) {
+                        print(`Visibility: ${stats.visible}/${stats.total} objects in range`);
+                    }
+                }
+                lastFeedbackTime = currentTime;
+            }
+        });
     }
     
     private createNextObject(): void {
@@ -68,6 +98,10 @@ export class AnchoringDemo extends BaseScriptComponent {
         this.enhancedFactory.generateAnchoredObject(prompt)
             .then((result) => {
                 print(result);
+                // Rescan for new anchors if distance manager is available
+                if (this.distanceManager) {
+                    this.distanceManager.rescanAnchors();
+                }
             })
             .catch((error) => {
                 print("Error creating object: " + error);

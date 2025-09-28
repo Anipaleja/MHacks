@@ -14,6 +14,14 @@ function checkUndefined(property, showIfData){
 }
 // @input bool anchorOnStart = true
 // @ui {"widget":"label", "label":"Anchor on Start"}
+// @input float maxVisibleDistance = 500
+// @ui {"widget":"label", "label":"Max Visible Distance (cm)"}
+// @input float fadeStartDistance = 300
+// @ui {"widget":"label", "label":"Fade Start Distance (cm)"}
+// @input bool enableDistanceFading = true
+// @ui {"widget":"label", "label":"Enable Distance Fading"}
+// @input bool showDistanceDebug
+// @ui {"widget":"label", "label":"Show Distance Debug"}
 var scriptPrototype = Object.getPrototypeOf(script);
 if (!global.BaseScriptComponent){
    function BaseScriptComponent(){}
@@ -30,6 +38,10 @@ script.__initialize();
 let awakeEvent = script.createEvent("OnAwakeEvent");
 awakeEvent.bind(() => {
     checkUndefined("anchorOnStart", []);
+    checkUndefined("maxVisibleDistance", []);
+    checkUndefined("fadeStartDistance", []);
+    checkUndefined("enableDistanceFading", []);
+    checkUndefined("showDistanceDebug", []);
     if (script.onAwake) {
        script.onAwake();
     }

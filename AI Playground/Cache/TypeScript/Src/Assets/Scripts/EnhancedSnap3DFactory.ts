@@ -27,6 +27,18 @@ export class EnhancedSnap3DFactory extends BaseScriptComponent {
   @input
   @ui.label("Placement Distance (cm)")
   private placementDistance: number = 80;
+  
+  @input
+  @ui.label("Max Visible Distance (cm)")
+  private maxVisibleDistance: number = 500;
+  
+  @input
+  @ui.label("Fade Start Distance (cm)")
+  private fadeStartDistance: number = 300;
+  
+  @input
+  @ui.label("Enable Distance Fading")
+  private enableDistanceFading: boolean = true;
   @ui.group_end
   
   @input
@@ -70,6 +82,11 @@ export class EnhancedSnap3DFactory extends BaseScriptComponent {
       if (this.enableAnchoring) {
         let positionAnchor = outputObj.createComponent(PositionAnchor.getTypeName());
         positionAnchor.anchorOnStart = false; // We'll position it manually
+        
+        // Configure distance parameters
+        positionAnchor.maxVisibleDistance = this.maxVisibleDistance;
+        positionAnchor.fadeStartDistance = this.fadeStartDistance;
+        positionAnchor.enableDistanceFading = this.enableDistanceFading;
         
         if (overridePosition) {
           positionAnchor.anchorToWorldPosition(overridePosition);
