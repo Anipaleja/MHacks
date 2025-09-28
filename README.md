@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # MHacks
-=======
+
 # Spectacles Templates
 
 A comprehensive collection of templates and examples for building Lens experiences on Spectacles.
