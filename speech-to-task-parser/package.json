@@ -1,0 +1,32 @@
+{
+  "name": "speech-to-task-parser",
+  "version": "1.0.0",
+  "description": "AI-powered speech to task parser using Gemini API for smart glasses and voice assistants",
+  "main": "speech-to-task-parser.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/speech-to-task-parser.js",
+    "dev": "ts-node speech-to-task-parser.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.17.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.19.17",
+    "jest": "^29.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "speech-to-text",
+    "task-parsing",
+    "gemini-api",
+    "smart-glasses",
+    "voice-assistant",
+    "ai"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
