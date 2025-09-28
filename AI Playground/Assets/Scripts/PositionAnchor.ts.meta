@@ -28,15 +28,31 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     anchorOnStart: false
+    enableDistanceFading: false
+    fadeStartDistance: false
+    maxVisibleDistance: false
+    showDistanceDebug: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
     - anchorOnStart: true
+      maxVisibleDistance: !<float> 500.000000
+      fadeStartDistance: !<float> 300.000000
+      enableDistanceFading: true
+      showDistanceDebug: false
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input bool anchorOnStart = true
     - '// @ui {"widget":"label", "label":"Anchor on Start"}'
+    - // @input float maxVisibleDistance = 500
+    - '// @ui {"widget":"label", "label":"Max Visible Distance (cm)"}'
+    - // @input float fadeStartDistance = 300
+    - '// @ui {"widget":"label", "label":"Fade Start Distance (cm)"}'
+    - // @input bool enableDistanceFading = true
+    - '// @ui {"widget":"label", "label":"Enable Distance Fading"}'
+    - // @input bool showDistanceDebug
+    - '// @ui {"widget":"label", "label":"Show Distance Debug"}'

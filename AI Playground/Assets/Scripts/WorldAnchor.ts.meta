@@ -29,6 +29,8 @@
   ScriptInputsHidden:
     anchorDistance: false
     autoAnchorOnAwake: false
+    enableDistanceFading: false
+    maxVisibleDistance: false
     useCurrentPosition: false
   ScriptTypesHidden:
     {}
@@ -38,6 +40,8 @@
     - anchorDistance: !<float> 80.000000
       autoAnchorOnAwake: true
       useCurrentPosition: false
+      maxVisibleDistance: !<float> 500.000000
+      enableDistanceFading: true
   ScriptTypes:
     -
       {}
@@ -48,3 +52,7 @@
     - '// @ui {"widget":"label", "label":"Auto Anchor on Awake"}'
     - // @input bool useCurrentPosition
     - '// @ui {"widget":"label", "label":"Use Current Position as Anchor"}'
+    - // @input float maxVisibleDistance = 500
+    - '// @ui {"widget":"label", "label":"Max Visible Distance (cm)"}'
+    - // @input bool enableDistanceFading = true
+    - '// @ui {"widget":"label", "label":"Enable Distance Fading"}'
